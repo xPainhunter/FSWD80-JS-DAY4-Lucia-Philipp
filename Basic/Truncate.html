@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+
+	<body>
+		<div id="container">
+			
+		</div>
+
+		<script>
+			function truncate(sentence, lettersToDisplay) {
+				var sentence = prompt("Please enter a Sentence", "Write anything");
+				var lettersToDisplay = Number(prompt("Enter number of letters to display"));
+				document.getElementById("container").innerHTML=sentence.slice(0, lettersToDisplay);
+			}
+			truncate();
+
+
+		</script>
+	</body>
+</html>

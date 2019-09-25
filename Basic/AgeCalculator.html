@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+
+	<body>
+		<div id="age">
+			
+		</div>
+		<script>
+			var d = new Date();
+			var birthyear = Number(prompt("Please enter your birthyear"));
+	    	var currentAge = d.getFullYear() - birthyear;
+	    	document.getElementById("age").innerHTML="You are " + currentAge + " year(s) old!";
+		</script>
+	</body>
+</html>
