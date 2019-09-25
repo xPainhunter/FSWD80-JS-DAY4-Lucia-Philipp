@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hotels</title>
+</head>
+<body>
+	<div id="container">
+	   	
+	   </div>   
+
+    <script>
+
+    	var nights = Number(prompt("Enter nights")) ;
+
+   		function HotelConstructor (name) {
+   			this.name = name;
+   			this.freeRooms =Math.floor((Math.random()*11) - 1);
+   			this.checkAvailability = function() {
+   					console.log(nights,this.freeRooms);
+   				if (this.freeRooms > nights) {
+   					document.getElementById("container").innerHTML +="<button type = 'button'>Reserve Room at "+ this.name +"</button>";
+   				}
+   				else {
+   					document.getElementById("container").innerHTML += "<p>There are no rooms available at " + this.name + ". </p>";
+   				}
+   			}
+
+   		
+
+
+   		}
+   		var plaza = new HotelConstructor("Plaza");
+   		var hilton = new HotelConstructor("Hilton");
+   		var orient = new HotelConstructor("Orient");
+
+   		plaza.checkAvailability();
+   		hilton.checkAvailability();
+   		orient.checkAvailability();
+
+    </script>
+	
+</body>
+</html>
