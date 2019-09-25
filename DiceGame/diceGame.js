@@ -6,7 +6,8 @@ document.getElementById("playerName2").innerHTML=secondPlayer;
 
 var execution1 = 0;
 var execution2 = 0;
-
+var a ;
+var b ;
 function rollDice1(){
 	
 	var p1dice1 = Number(Math.floor(Math.random()*6)+1);
@@ -16,9 +17,9 @@ function rollDice1(){
 	document.getElementById("p1dice2").innerHTML=p1dice2;
 	document.getElementById("p1sum").innerHTML=p1diceSum;
 	execution1 = execution1 + 1;
-	if (execution1 = execution2 && execution1 != 0){
-	getResult();
-	}
+	a = Number(p1diceSum);
+	console.log(a);
+	return a;	
 }
 
 function rollDice2(){
@@ -29,26 +30,30 @@ function rollDice2(){
 	document.getElementById("p2dice2").innerHTML=p2dice2;
 	document.getElementById("p2sum").innerHTML=p2diceSum;
 	execution2 = execution2 + 1;
-	if (execution1 = execution2 && execution1 != 0){
-	getResult();
-	}
+	b = Number(p2diceSum);
+	console.log(b);
+	return b;
 }
 
-function getResult(resultp1, resultp2){
-	var resultp1 = document.getElementById("p1sum");
-	var resultp2 = document.getElementById("p2sum");
-	var player1 = document.getElementById("playerName1");
-	var player2 = document.getElementById("playerName");
-	if (resultp1>resultp2){
-		document.getElementById("result")=player1 + " won the game!";
+function getResult(a,b){
+	var player1 = document.getElementById("playerName1").innerHTML;
+	var player2 = document.getElementById("playerName2").innerHTML;
+	console.log(a,b);
+	if (a>b){
+		document.getElementById("result").innerHTML=player1 + " won the game!";
 	}
-	else if (resultp1<resultp2){
-		document.getElementById("result")=player2 + " won the game!";
+	else if (a<b){
+		document.getElementById("result").innerHTML=player2 + " won the game!";
 	}
 	else {
-		document.getElementById("result")="No winner. Roll again";
+		document.getElementById("result").innerHTML="No winner. Roll again";
 	}
 }
 
+setInterval(function(){
+	if(a>0 && b>0 && execution1 == execution2){
+		getResult(a,b);
+	}
+},1000)
 
 
