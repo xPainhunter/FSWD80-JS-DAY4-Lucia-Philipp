@@ -1,0 +1,15 @@
+#page {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+#player1, #player2 {
+	width: 40%;
+	background: grey;
+}
+
+#result {
+	width: 20%;
+	background: red;
+}
