@@ -6,11 +6,16 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
+	<div id="displayResult">
+		
+	</div>
+
 	<div>
 		<form>
 
 
 			<input type="text" name="number1" id="nr1" placeholder="Enter first number">
+
 			<div class="dropdown">
 				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				    Dropdown button
@@ -24,8 +29,10 @@
 				    <a class="dropdown-item" id="modu" href="#">Modulo</a>
 				  </div>
 			</div>
+
 			<input type="text" name="number2" id="nr2" placeholder="Enter second number">
-			<input type="submit" name="" value="">
+
+			<button type="button" onclick="calculateResult()">calculate result</button>
 
 
 		</form>
@@ -33,25 +40,31 @@
 	</div>
 
 <script>
+	
 
-	if (document.getElementById("Plus")) {
-		var result = document.getElementById("nr1") + document.getElementById("nr2");
-		document.write("The result is: "+ result);
-	}
-	else if (document.getElementById("Minus")) {
-		var result = document.getElementById("nr1") - document.getElementById("nr2");
-	}
-	else if (document.getElementById("Multiply")) {
-		var result = document.getElementById("nr1") * document.getElementById("nr2");
-	}
-	else if (document.getElementById("Divide")) {
-		var result = document.getElementById("nr1") / document.getElementById("nr2");
-	}
-	else if (document.getElementById("SquareRoot")) {
-		var result = document.getElementById("nr1")
-	}
-	else {
-		var result = document.getElementById("nr1") % document.getElementById("nr2");
+
+
+
+	function calculateResult(){
+		if (document.getElementById("Plus") === true) {
+			var result = document.getElementById("nr1") + document.getElementById("nr2");
+			document.getElementById("displayResult").innerHTML="The result is: "+ result;
+		}
+		else if (document.getElementById("Minus")) {
+			var result = document.getElementById("nr1") - document.getElementById("nr2");
+		}
+		else if (document.getElementById("Multiply")) {
+			var result = document.getElementById("nr1") * document.getElementById("nr2");
+		}
+		else if (document.getElementById("Divide")) {
+			var result = document.getElementById("nr1") / document.getElementById("nr2");
+		}
+		else if (document.getElementById("SquareRoot")) {
+			var result = document.getElementById("nr1")
+		}
+		else {
+			var result = document.getElementById("nr1") % document.getElementById("nr2");
+		}
 	}
 
 

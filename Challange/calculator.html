@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Calculator</title>
+		<link rel="stylesheet" type="text/css" href="styleCalculator.css">
+	</head>
+
+	<body>
+		<div class="page">
+			<div id="number1">
+				<input type="text" name="number1" id="nr1" placeholder="Enter first number">
+			</div>
+
+			<div id="operator">
+				<input type="radio" name="option" id="Plus">Plus<br>
+				<input type="radio" name="option" id="Minus">Minus<br>
+				<input type="radio" name="option" id="Multiply">Multiply<br>
+				<input type="radio" name="option" id="Divide">Divide<br>
+				<input type="radio" name="option" id="SquareRoot">SquareRoot<br>
+				<input type="radio" name="option" id="Modulo">Modulo<br>
+
+			</div>
+
+			<div id="number2">
+				<input type="text" name="number2" id="nr2" placeholder="Enter second number">
+			</div>
+
+			<div id="forResult">
+				<button type="button" onclick="calculateResult()">calculate result</button>
+			</div>
+
+			<div id="displayResult">
+				
+			</div>
+
+
+			<script>		
+				function calculateResult(){
+
+					if (document.getElementById("Plus").checked) {
+						var a = Number(document.getElementById("nr1").value);
+						var b = Number(document.getElementById("nr2").value);
+						var result = (a + b);
+						document.getElementById("displayResult").innerHTML="The result is: "+ result;
+						console.log(a, b, result);
+					}
+					else if (document.getElementById("Minus").checked) {
+						var a = Number(document.getElementById("nr1").value);
+						var b = Number(document.getElementById("nr2").value);
+						var result = Number(a - b);
+						document.getElementById("displayResult").innerHTML="The result is: "+ result;
+						console.log(a, b, result);
+					}
+					else if (document.getElementById("Multiply").checked) {
+						var a = Number(document.getElementById("nr1").value);
+						var b = Number(document.getElementById("nr2").value);
+						var result = Number(a * b);
+						document.getElementById("displayResult").innerHTML="The result is: "+ result;
+						console.log(a, b, result);
+					}
+					else if (document.getElementById("Divide").checked) {
+						var a = Number(document.getElementById("nr1").value);
+						var b = Number(document.getElementById("nr2").value);
+						var result = Number(a / b);
+						document.getElementById("displayResult").innerHTML="The result is: "+ result;
+						console.log(a, b, result);
+					}
+					else if (document.getElementById("SquareRoot").checked) {
+						var a = Number(document.getElementById("nr1").value);
+						var result = Number(Math.sqrt(a));
+						document.getElementById("displayResult").innerHTML="The result is: "+ result;
+						console.log(a, b, result);
+					}
+					else {
+						var a = Number(document.getElementById("nr1").value);
+						var b = Number(document.getElementById("nr2").value);
+						var result = Number(a % b);
+						document.getElementById("displayResult").innerHTML="The result is: "+ result;
+						console.log(a, b, result);
+					}
+				}
+			</script>
+		</div>
+	</body>
+</html>
